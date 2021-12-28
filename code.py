@@ -1,0 +1,22 @@
+import pandas as pd
+data=pd.read_excel('data1.xlsx')
+df=pd.DataFrame(data)
+print(df)
+print("1. Make a average which has last 21 days close price\n\n")
+a=df.tail(21)
+Sum_of_last21=sum(a['Close'])
+print("Average of last 21 days close price:",Sum_of_last21/21)
+print("2. Make a average which has last 50 days close price\n\n")
+b=df.tail(50)
+Sum_of_last50=sum(b['Close'])
+print("Average of last 50 days close price:",Sum_of_last50/50)
+print("3. Give a data set which has all the open=high values.\n\n")
+print("A data set which has all the open=high values is as follows:")
+z=df[df['Open']==df['High']]
+z.to_excel('OPen_high.xlsx')
+print(df[df['Open']==df['High']])
+print("4. Give a data set which has all the open=low values.\n\n")
+print("A data set which has all the open=Low values is as follows:")
+y=df[df['Open']==df['High']]
+y.to_excel('OPen_close.xlsx')
+print(df[df['Open']==df['Low']])
